@@ -16,17 +16,18 @@ class Item:
         self.name = name
         self.price = price
         self.quantity = quantity
+
     def calculate_total_price(self) -> float:
         """
         Рассчитывает общую стоимость конкретного товара в магазине.
 
         :return: Общая стоимость товара.
         """
-        self.price = self.price * self.pay_rate
-        return self.price
+        total_price = self.price * self.quantity
+        return total_price
 
     def apply_discount(self) -> None:
         """
         Применяет установленную скидку для конкретного товара.
         """
-        pass
+        self.price = self.price * self.pay_rate
