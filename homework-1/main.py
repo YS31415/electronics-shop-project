@@ -18,3 +18,5 @@ if __name__ == '__main__':
     print(item2.price)  # 20000
 
     print(Item.all)  # [<__main__.Item object at 0x000001EC6250C690>, <__main__.Item object at 0x000001EC6250C6D0>]
+    for i in Item.all:
+        print(i)
