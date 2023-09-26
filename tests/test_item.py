@@ -2,10 +2,16 @@
 from src.item import Item
 import pytest
 
+@pytest.fixture()
+def item():
+    return Item('Шляпа', 500, 3)
 
-def test_calculate_total_price():
-    product_1 = Item('Шляпа', 500, 3)
-    assert product_1.calculate_total_price() == 1500
+def test_calculate_total_price(item):
+    assert item.calculate_total_price() == 1500
+
+# def test_calculate_total_price():
+#     product_1 = Item('Шляпа', 500, 3)
+#     assert product_1.calculate_total_price() == 1500
 
 def test_apply_discount():
     product_2 = Item('Большая Шляпа', 1500, 2)
