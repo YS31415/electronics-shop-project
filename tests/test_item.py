@@ -18,3 +18,8 @@ def test_apply_discount():
     Item.pay_rate = 2
     product_2.apply_discount()
     assert product_2.price == 3000
+
+
+def test_string_to_number():
+    p1 = Item('Product', 300, 3)
+    assert p1.string_to_number('7') == 7
