@@ -13,12 +13,21 @@ class Item:
         :param price: Цена за единицу товара.
         :param quantity: Количество товара в магазине.
         """
-        self.name = name
+        self.__name = name
         self.price = price
         self.quantity = quantity
 
     def __str__(self):
-        return f'{self.name} {self.price} {self.quantity}'
+        return f'{self.__name} {self.price} {self.quantity}'
+
+    @property
+    def product_name(self, name):
+        return self.__name
+
+    @product_name.setter
+    def product_name(self, name):
+        self.__name = name
+        return self.__name
 
     def calculate_total_price(self) -> float:
         """
@@ -34,3 +43,6 @@ class Item:
         Применяет установленную скидку для конкретного товара.
         """
         self.price = self.price * self.pay_rate
+
+t1 = Item('Hat', 500, 3)
+print(t1)
