@@ -10,14 +10,13 @@ class Item:
     def __init__(self, name: str, price: float, quantity: int) -> None:
         """
         Создание экземпляра класса item.
-
         :param name: Название товара.
         :param price: Цена за единицу товара.
         :param quantity: Количество товара в магазине.
         """
         if len(name) > 10:
             print('Длина наименования товара превышает 10 символов.')
-        self.name = name
+        self.__name = name
         self.price = price
         self.quantity = quantity
 
@@ -25,11 +24,11 @@ class Item:
         return f'{self.__name} {self.price} {self.quantity}'
 
     @property
-    def product_name(self, name):
+    def name(self):
         return self.__name
 
-    @product_name.setter
-    def product_name(self, name):
+    @name.setter
+    def name(self, name):
         if len(name) > 10:
             name = name[:10]
         self.__name = name
