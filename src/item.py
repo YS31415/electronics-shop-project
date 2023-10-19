@@ -24,7 +24,10 @@ class Item:
         return f'{self.__name}'
 
     def __repr__(self):
-        return f"{Item.__name__}('{self.__name}', {self.price}, {self.quantity})"
+        class_name = str(self.__class__)
+        class_name = class_name.split('.')[1].strip(">'")
+        class_name = class_name.capitalize()
+        return f"{class_name}('{self.__name}', {self.price}, {self.quantity})"
 
     @property
     def name(self):
