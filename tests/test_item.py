@@ -37,3 +37,7 @@ path = '../src/items.csv'
 def test_instantiate_from_csv():
     Item.instantiate_from_csv('../src/items.csv')
     assert len(Item.all) == 5
+
+def test_repr_str(item):
+    assert item.__repr__() == "Item('Шляпа', 500, 3)"
+    assert item.__str__() == "Шляпа"

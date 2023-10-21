@@ -29,6 +29,9 @@ class Item:
         class_name = class_name.capitalize()
         return f"{class_name}('{self.__name}', {self.price}, {self.quantity})"
 
+    def __add__(self, other):
+        return self.quantity + other.quantity
+
     @property
     def name(self):
         return self.__name
